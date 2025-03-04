@@ -7,7 +7,7 @@ WORKDIR /app
 COPY flows/ /app/flows/
 
 # Set environment variables
-ENV PYTHONWARNINGS="ignore::DeprecationWarning,ignore::UserWarning,ignore::SAWarning"
+ENV PYTHONWARNINGS="ignore::DeprecationWarning"
 ENV LANGFLOW_DATABASE_URL="sqlite:////app/langflow.db"
 ENV LANGFLOW_FLOW_STORE_DIR="/app/flows"
 
@@ -17,4 +17,4 @@ ENV HOST="0.0.0.0"
 RUN ls -la /app/flows/
 
 # Railway will set PORT automatically
-CMD langflow run --host $HOST --port $PORT --flow-store-dir /app/flows
+CMD langflow run --host $HOST --port $PORT
