@@ -1,4 +1,4 @@
-FROM langflow/langflow:latest
+FROM logspace/langflow:latest
 
 # Create app directory
 WORKDIR /app
